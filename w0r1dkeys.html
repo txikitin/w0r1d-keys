@@ -1,0 +1,79 @@
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300&display=swap" rel="stylesheet">
+
+
+<style>
+body, html, #app {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#app {
+  overflow: hidden;
+  touch-action: pan-up;
+  color: #ffffff;
+  font-family:  'Red Hat Mono', monospace;
+  text-align: center;
+  text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+}
+
+#app h1 {
+  --fontSize: 60px;
+  --lineHeight: 80px;
+  width: auto;
+  height: calc(2 * var(--lineHeight));
+  line-height: var(--lineHeight);
+  margin: calc(50vh - var(--lineHeight)) auto 0;
+  font-size: var(--fontSize);
+}
+
+#app a {
+  margin-top: 10px;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+}
+
+#app canvas {
+  display: block;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+}
+
+</style>
+
+
+<div id="app">
+  <div id="hero">
+    <h1>w0r1d keys</h1>
+    <a target="_blank" href="https://github.com/klevron/threejs-toys">NFTs</a>
+  </div>
+</div>
+
+
+<script type="module">
+
+
+import { neonCursor } from './threejs-toys.module.cdn.min.js'
+
+
+neonCursor({
+  el: document.getElementById('app'),
+  shaderPoints: 16,
+  curvePoints: 80,
+  curveLerp: 0.5,
+  radius1: 5,
+  radius2: 30,
+  velocityTreshold: 10,
+  sleepRadiusX: 100,
+  sleepRadiusY: 100,
+  sleepTimeCoefX: 0.0025,
+  sleepTimeCoefY: 0.0025
+})	
+
+
+</script>
